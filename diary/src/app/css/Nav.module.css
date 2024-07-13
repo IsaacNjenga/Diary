@@ -1,0 +1,45 @@
+.nav {
+  background-color: #343a40;
+  padding: 1rem;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0 1rem;
+}
+
+.navLink {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #17a2b8;
+  transform: scale(1.1);
+}
+
+.navLink:active {
+  color: #ffc107;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #343a40;
+  color: #f8f9fa;
+  background: #33333377;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}

@@ -1,0 +1,40 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.h1 {
+  text-align: center;
+  color: #dccaca;
+}
+
+.p {
+  text-align: center;
+  color: #f2dbdb;
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+}
+
+.li {
+  margin-bottom: 2rem;
+}
+
+.li h3 {
+  margin-bottom: 0.5rem;
+  color: #d8b0b0;
+}
+
+.li h4 {
+  margin: 0.5rem 0;
+  color: #b69999;
+}
+
+.li p {
+  margin: 0.5rem 0;
+  color: #a98c8c;
+}
