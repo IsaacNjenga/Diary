@@ -54,3 +54,23 @@ export async function POST(req) {
     );
   }
 }
+
+//Function to delete an entry
+export async function DELETE(req) {
+  try {
+    const { id } = await req.json();
+    const existingEntries = await readJSONFile(filePath);
+    const filteredEntries = existingEntries.filter((entry) => entry.id !== id);
+
+    await fs.promises.writeFile(filePath, JSON.stringify(filteredEntries, null, 2));
+    console.log("Entry deleted successfully");
+
+    return NextResponse.json({ message: "Entry deleted!" }, { status: 200 });
+  } catch (error) {
+    console.error("Failed to delete entry:", error);
+    return NextResponse.json(
+      { error: "Failed to delete entry" },
+      { status: 500 }
+    );
+  }
+}
