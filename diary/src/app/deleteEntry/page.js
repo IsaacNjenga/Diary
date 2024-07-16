@@ -25,6 +25,11 @@ function DeleteEntry() {
   }, []);
 
   const handleDelete = async (id) => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this entry?");
+    if (!isConfirmed) {
+      return;
+    }
+
     try {
       await axios.delete("/api/entries", { data: { id } });
       setEntries(entries.filter((entry) => entry.id !== id));
