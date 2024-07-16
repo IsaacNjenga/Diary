@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 
 const filePath = path.resolve(process.cwd(), "data", "entries.json");
 
-// Function to read the JSON file
 const readJSONFile = async (filePath) => {
   try {
     const data = await fs.promises.readFile(filePath, "utf8");
@@ -54,7 +53,6 @@ export async function POST(req) {
   }
 }
 
-// Function to delete an entry
 export async function DELETE(req) {
   try {
     const { id } = await req.json();
@@ -74,16 +72,14 @@ export async function DELETE(req) {
   }
 }
 
-// Function to edit existing entry
 export async function PUT(req) {
   try {
-    const body = await req.json();
-    const { id, title, entry } = body;
+    const { id, title, entry } = await req.json();
 
     const existingEntries = await readJSONFile(filePath);
 
-    const updatedEntries = existingEntries.map((entry) =>
-      entry.id === Number(id) ? { ...entry, title, entry: entry.entry } : entry
+    const updatedEntries = existingEntries.map((item) =>
+      item.id === id ? { ...item, title, entry } : item
     );
 
     await fs.promises.writeFile(filePath, JSON.stringify(updatedEntries, null, 2));
@@ -92,6 +88,9 @@ export async function PUT(req) {
     return NextResponse.json({ message: `Entry with id ${id} updated` });
   } catch (error) {
     console.error("Failed to update entry:", error);
-    return NextResponse.json({ error: "Failed to update entry" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update entry" },
+      { status: 500 }
+    );
   }
 }
