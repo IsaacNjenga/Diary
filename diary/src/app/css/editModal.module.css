@@ -13,7 +13,7 @@
   
   /* Modal content styles */
   .modalContent {
-    background-color: #fefefe;
+    background-color: #dccaca;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -48,6 +48,11 @@
     display: block;
     margin-bottom: 0.5rem;
     color: #000000;
+  }
+
+  .h2 {
+    color: #000000;
+    text-align: center;
   }
   
   .input,

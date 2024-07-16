@@ -25,7 +25,7 @@ function EditModal({ isOpen, onClose, entry, onSave }) {
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <span className={styles.close} onClick={onClose}>&times;</span>
-        <h2>Edit Entry</h2>
+        <h2 className={styles.h2}>Edit Entry</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label} htmlFor="title">Title:</label>
           <input
